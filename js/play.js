@@ -6,14 +6,13 @@ var playState = {
     // Keyboard to move the sprite
     this.keyboard = game.input.keyboard;
     // Create player sprite and enable Physics
-    this.player = game.add.sprite(64, 64,'pikachu');
-    this.player.smoothed = false;
+    this.player = game.add.sprite(16, 16,'pikachu');
     this.player.scale.set(1);
 
-    left = this.player.animations.add('left', [8,9], 10, true);
-    right = this.player.animations.add('right', [1,2], 10, true);
-    this.player.animations.add('up', [11,12,13], 10, true);
-    this.player.animations.add('down', [4,5,6], 10, true);
+    left = this.player.animations.add('left', [5,6,7,8], 10, true);
+    right = this.player.animations.add('right', [9,10,11,12], 10, true);
+    this.player.animations.add('up', [13,14,15,16], 10, true);
+    this.player.animations.add('down', [1,2,3,4], 10, true);
 
     cursors = game.input.keyboard.createCursorKeys();
 
@@ -35,31 +34,31 @@ var playState = {
     // When the player sprite and win sprite overlap, Win!
     game.physics.arcade.overlap(this.player, this.win, this.Win, null, this);
 
-    thid.player.body.velocity.set(0);
+    this.player.body.velocity.set(0);
 
     if (cursors.left.isDown)
     {
-        player.body.velocity.x = -175;
-        player.play('left');
+        this.player.body.velocity.x = -175;
+        this.player.play('left');
     }
     else if (cursors.right.isDown)
     {
-        player.body.velocity.x = 175;
-        player.play('right');
+        this.player.body.velocity.x = 175;
+        this.player.play('right');
     }
     else if (cursors.up.isDown)
     {
-        player.body.velocity.y = -175;
-        player.play('up');
+        this.player.body.velocity.y = -175;
+        this.player.play('up');
     }
     else if (cursors.down.isDown)
     {
-        player.body.velocity.y = 175;
-        player.play('down');
+        this.player.body.velocity.y = 175;
+        this.player.play('down');
     }
     else
     {
-        player.animations.stop();
+        this.player.animations.stop();
     }
 
   },
