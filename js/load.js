@@ -6,8 +6,8 @@ var loadState = {
 
     // Loading label on the screen
     var loadingLabel = game.add.text(80, 150, 'Loading...', { font: '30px Courier', fill: '#ffffff'});
-    game.load.image('pikachu', 'assets/pikachu.png', 16, 16);
-    game.load.image('pokeball', 'assets/pokeball.png', 16, 16);
+    game.load.image('player', 'assets/player.png');
+    game.load.image('pokeball', 'assets/pokeball.png');
 
     var cursors;
     var player;
