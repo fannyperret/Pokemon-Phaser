@@ -6,7 +6,7 @@ var playState = {
     // Keyboard to move the sprite
     this.keyboard = game.input.keyboard;
     // Create player sprite and enable Physics
-    this.player = game.add.sprite(16, 16,'player');
+    this.player = game.add.sprite(0, 0, 'player');
     this.player.scale.set(0.4);
 
     left = this.player.animations.add('left', [5,6,7,8], 10, true);
